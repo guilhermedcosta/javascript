@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="vel" id="vel"> km/h
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id="res">
+    </div>
+
+    <h1>Teste de Nacionalidade</h1>
+    Digite o nome do seu pais: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res2">
+
+    </div>
+  
+  <script>
+        function clicar() {
+            var vel = Number(document.querySelector('#vel').value)
+            var res = document.getElementById ('res')
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}km/h</strong></p>`
+            if (vel > 60) {
+                res.innerHTML += '<p>Você está <strong>MULTADO</strong> por excesso de velocidade.</p>'
+            }
+            res.innerHTML += '<p>Dirija sempre com sinto de segurança!</p>'
+        }
+
+        function verificar(){
+            var pais = document.querySelector('#pais').value
+            var res2 = document.querySelector('#res2')
+            if (pais.toLowerCase() == 'brasil'){
+                res2.innerHTML = '<p>Você é <strong>BRASILEIRO</strong></p>'
+            } else {
+                res2.innerHTML = '<p>Você é <strong>ESTRANGEIRO</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
